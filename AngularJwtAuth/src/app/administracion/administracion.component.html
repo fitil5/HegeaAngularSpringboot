@@ -1,0 +1,55 @@
+<title>Usuarios</title>
+<div class="jumbotron"> 
+  <h1  class="display-5" style="text-align: center">Usuarios</h1>
+  <hr class="my-2">
+<br>
+
+<!--<button class="btn btn-light" [routerLink]="['/adminDiasActividad']"> Ir Admin</button>
+<button class="btn btn-light" [routerLink]="['/actividad']"> Ir Actividades</button>-->
+<div class="form-group">
+  <input type="text" style= "width: 300px;"class="form-control" placeholder="Search by username"  [(ngModel)]="searchTerm" />
+</div>
+<table id="example" class="table table-striped table-bordered" style="width:100%; table-layout: auto; ">
+    <thead>
+        <tr style="background-color: rgb(255, 222, 131); text-align: center">
+
+
+            <th>Id</th>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Rol</th>
+            <th>enabled</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+      </tbody>
+      <tr *ngFor="let usuario of usuarios | usernameFilter:searchTerm" style="background-color: beige; text-align: center">
+        <td>{{usuario.id}}</td>  
+        <td>{{usuario.username}}</td>
+        <td>{{usuario.name}}</td>
+          <td>{{usuario.email}}</td>
+         <!-- <td>{{usuario.password}}</td>-->
+          <td>{{usuario.role}}</td>
+          <td>{{usuario.enabled}}</td>
+          <!--<label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>-->
+            <td><button type="button" class="btn btn-primary" (click)="update(usuario)">Editar</button></td>
+          <td><button type="button" class="btn btn-danger"  (click)="delete(usuario.id)"> Borrar</button></td>
+          
+        </tr>
+      </table>
+      <button type="button" class="btn btn-info" (click)="router.navigate(['/signup']);" style="margin-left: 94.4%">Añadir</button>
+</div>
+
+
+
+
+
+
+
+
+    

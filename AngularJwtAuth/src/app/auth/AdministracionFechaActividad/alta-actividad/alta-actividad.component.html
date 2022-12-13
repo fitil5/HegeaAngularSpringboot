@@ -1,0 +1,32 @@
+<table id="example" class="table table-striped table-bordered" style="width:100%; table-layout: auto; ">
+  <thead>
+      <tr style="background-color: rgb(255, 222, 131); text-align: center">
+
+
+
+         
+          <th>Fecha</th>
+          <th>Actividad</th>
+         
+         
+          <th></th>
+          
+      </tr>
+  </thead>
+  <tbody>
+    </tbody>
+    <tr *ngFor="let fechaAct of fechaActividad" style="background-color: beige; text-align: center">
+        
+      <td>{{fechaAct.fecha}}</td>  
+      <td>{{fechaAct.nombre_act}}</td>
+      
+      
+        <!--<label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>-->
+          
+        <td><button  type="button" class="btn btn-danger"  (click)="AltaBaja(fechaAct)" [style.background-color]="fechaAct.alta ? 'red' : 'blue'" >{{fechaAct.alta ? 'Baja' : 'Alta'}} </button></td>
+        
+      </tr>
+    </table>

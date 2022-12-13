@@ -1,0 +1,41 @@
+<title>Excel</title>
+<div class="jumbotron"> 
+  <h1  class="display-5" style="text-align: center">Excel</h1>
+  <hr class="my-2">
+<br>
+
+<!--<button class="btn btn-light" [routerLink]="['/adminDiasActividad']"> Ir Admin</button>
+<button class="btn btn-light" [routerLink]="['/actividad']"> Ir Actividades</button>-->
+<table id="example" class="table table-striped table-bordered" style="width:100%; table-layout: auto; ">
+    <thead>
+        <tr style="background-color: rgb(255, 222, 131); text-align: center">
+
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Role</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+      </tbody>
+     
+      <tr *ngFor="let line of excelResponse.usuarios" style="background-color: beige; text-align: center">
+     
+        
+       <td>{{line.id}}</td>
+        <td> {{line.name}}</td>
+        <td>{{line.username}}</td>
+        <td>{{line.email}}</td>
+        <td>{{line.password}}</td>
+        <td>{{line.role}}</td>
+        
+       
+        </tr>
+      </table> 
+      <button type="button" class="btn btn-primary" (click)="addExcel(excelResponse.usuarios)">Siguiente</button>
+
+      

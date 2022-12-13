@@ -1,0 +1,20 @@
+<table id="example" class="table table-striped table-bordered" style="width:100%; table-layout: auto; ">
+  <thead>
+      <tr style="background-color: rgb(255, 222, 131); text-align: center">
+
+
+          <th>Actividad</th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+    </tbody>
+    <tr *ngFor="let actividad of actividades"  style="background-color: beige; text-align: center">
+      <td>{{actividad.nombre_act}}</td>  
+     
+          <td><button type="button" class="btn btn-primary" (click)="update(actividad)">Editar</button></td>
+        <td><button type="button" class="btn btn-danger"  (click)="delete(actividad.nombre_act)"> Borrar</button></td>
+        
+      </tr>
+    </table>

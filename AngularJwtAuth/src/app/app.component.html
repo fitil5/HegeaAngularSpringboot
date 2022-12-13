@@ -1,0 +1,53 @@
+<nav class="navbar navbar-inverse" id="cont">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!--<a class="navbar-brand" href="#">grokonez</a>-->
+     
+    
+    
+    <ul class="nav navbar-nav" routerLinkActive="active">
+     
+      
+      <li *ngIf="!authority" class="nav-item">
+        <a class="nav-link" routerLink="auth/login">Login</a>
+      </li>
+      <li *ngIf="authority === 'admin'" class="nav-item">
+        <a class="nav-link" routerLink="administracion">Administracion</a>
+      </li>
+      <li *ngIf="authority === 'admin'" class="nav-item">
+        <a class="nav-link" routerLink="upload">Upload</a>
+      </li>
+      <li *ngIf="authority === 'admin'" class="nav-item">
+          <a class="nav-link" routerLink="dias">Fecha Actividades</a>
+        </li>
+        <li *ngIf="authority === 'admin'" class="nav-item">
+            <a class="nav-link" routerLink="borrarFechaActividad">Borrar Fecha Actividades</a>
+          </li>
+          <li *ngIf="authority === 'admin' || authority === 'user' || authority === 'pm'" class="nav-item">
+            <a class="nav-link" routerLink="altaActividad">Alta Actividades</a>
+          </li>
+          <li *ngIf="authority === 'admin'" class="nav-item">
+            <a class="nav-link" routerLink="actividad"> Actividades</a>
+          </li>
+          <li *ngIf="authority === 'admin'" class="nav-item">
+            <a class="nav-link" routerLink="registrados">Registados</a>
+          </li>
+          <li *ngIf="authority === 'admin'" class="nav-item">
+            <a class="nav-link" routerLink="map">Maps</a>
+          </li>
+          
+    </ul>
+    <ul class="nav navbar-nav" routerLinkActive="active" style="float: right;">
+      <li *ngIf="authority === 'admin' || authority === 'user' || authority === 'pm'" class="nav-item">
+        <a class="nav-link"  routerLink="#" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+    
+    
+  </div>
+  <img id="image"src="assets/descarga.png" style= "max-width: 4%;float: right;">
+</div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

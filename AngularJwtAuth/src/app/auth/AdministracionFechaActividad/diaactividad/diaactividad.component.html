@@ -1,0 +1,96 @@
+
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+  <div class="form-group" [class.has-error]="mes.touched && mes.invalid">
+    <label for="actividad" class="control-label">Actividad</label>
+  <select required  
+                    name="actividad"
+                    class="form-control form-control-sm col-sm-7" 
+                    id="actividad"
+                    [(ngModel)]="semana.actividad"  #actividad="ngModel">
+                    
+                    <option *ngFor="let item of actividades" 
+                             >{{item.nombre_act}}</option>
+  </select>
+  <div *ngIf="f.submitted && actividad.invalid">
+  Actividad is required
+  </div>
+</div>
+
+<div class="form-group" [class.has-error]="mes.touched && mes.invalid">
+  <label for="mes" class="control-label">Mes</label>
+<select required  
+                  name="mes"
+                  class="form-control form-control-sm col-sm-7" 
+                  id="mes"
+                  [(ngModel)]="semana.mes"  #mes="ngModel">
+                  
+                  <option *ngFor="let item of months" 
+                           >{{item.key}}</option>
+</select>
+<div *ngIf="f.submitted && mes.invalid">
+Mes is required
+</div>
+</div>
+<div class="form-group" [class.has-error]="year.touched && year.invalid">
+  <label for="year" class="control-label">Año</label>
+<select required  
+                  name="year"
+                  class="form-control form-control-sm col-sm-7" 
+                  id="year"
+                  [(ngModel)]="semana.year"  #year="ngModel">
+                  
+                  <option *ngFor="let item of years" 
+                           >{{item}}</option>
+</select>
+<div *ngIf="f.submitted && year.invalid">
+Año is required
+</div>
+</div>
+<table id="example" class="table table-striped table-bordered" style="width:100%; table-layout: auto; ">
+<tr style="background-color: rgb(255, 222, 131); text-align: center">
+
+
+  <th>Lunes</th>
+  <th>Martes</th>
+  <th>Miercoles</th>
+  <th>Jueves</th>
+  <th>Viernes</th>
+  
+</tr>
+<tr style="background-color: white; text-align: center">
+
+
+  
+  <th><button class="btn btn-primary" (click)="lunes()" [style.background-color]="semana.lunes ? 'green' : 'blue'" >{{semana.lunes}}</button></th>
+  <th><button class="btn btn-primary" (click)="martes()" [style.background-color]="semana.martes ? 'green' : 'blue'" >{{semana.martes}}</button></th>
+  <th><button class="btn btn-primary" (click)="miercoles()" [style.background-color]="semana.miercoles ? 'green' : 'blue'" >{{semana.miercoles}}</button></th>
+  <th><button class="btn btn-primary" (click)="jueves()" [style.background-color]="semana.jueves ? 'green' : 'blue'">{{semana.jueves}}</button></th>
+  <th><button class="btn btn-primary" (click)="viernes()"[style.background-color]="semana.viernes ? 'green' : 'blue'" >{{semana.viernes}}</button></th>
+  
+</table>
+<table id="example" class="table table-striped table-bordered" style="width:100%; table-layout: auto; ">
+    <thead>
+        <tr style="background-color:white; text-align: center">
+
+
+            <th>Id</th>
+            <th>Fecha</th>
+            <th>Actividad</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+      </tbody>
+      <tr *ngFor="let diaActividad of diasActividad" style="background-color: beige; text-align: center">
+        <td>{{diaActividad.id}}</td>  
+        <td>{{diaActividad.fecha}}</td>  
+        <td>{{diaActividad.nombre_act}}</td>
+        
+            
+          <td><button type="button" class="btn btn-danger"  (click)="delete(diaActividad)"> Borrar</button></td>
+          
+        </tr>
+      </table>
+      <button class="btn btn-primary" type="submit" >Guardar</button>
+    </form>
+
