@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Actividad } from '../modelos/actividad';
 import { ActividadService } from '../services/actividad.service';
 
@@ -8,8 +9,8 @@ import { ActividadService } from '../services/actividad.service';
   styleUrls: ['./actividad.component.css']
 })
 export class ActividadComponent implements OnInit {
-actividades:Actividad[]
-  constructor(public actividadService:ActividadService) { }
+actividades:Actividad[];
+  constructor(public actividadService:ActividadService, private router: Router) { }
 
   ngOnInit() {
     this.getActividades()
@@ -20,4 +21,8 @@ getActividades(){
     console.log(this.actividades);
   });
 }
+redireccionar()
+{this.router.navigate(['/addActividad']);}
+
+
 }

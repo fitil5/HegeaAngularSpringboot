@@ -10,6 +10,7 @@ import com.grokonez.jwtauthentication.repository.ActividadRepository;
 
 public interface IActividad {
 	List<Actividad> findAll();
+	Actividad saveActividad(Actividad actividad);
 	@Service
 	public class ActividadClass implements IActividad{
 		@Autowired
@@ -18,6 +19,11 @@ public interface IActividad {
 		public List<Actividad> findAll() {
 			// TODO Auto-generated method stub
 			return actividadRepository.findAll();
+		}
+		@Override
+		public Actividad saveActividad(Actividad actividad ) {
+			// TODO Auto-generated method stub
+			return actividadRepository.save(actividad);
 		}
 		
 	}

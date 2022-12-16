@@ -10,27 +10,34 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.grokonez.jwtauthentication.model.Actividad;
-import com.grokonez.jwtauthentication.services.IActividad;
+import com.grokonez.jwtauthentication.model.Organizacion;
+import com.grokonez.jwtauthentication.services.IOrganizacion;
 
 @CrossOrigin(origins = "*", maxAge = 36000)
 @RestController
-public class ActividadRestAPIs {
+public class OrganizacionAPIs {
 
 	@Autowired
-	IActividad actividadService;
+IOrganizacion organizacionService;
 	
-	@GetMapping("/api/actividades")
-	//@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public List<Actividad> getActividades() {
+	@GetMapping("/api/getOrganizacion")
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	public List<Organizacion> getActividades() {
 		
-		return actividadService.findAll();
+		return organizacionService.getOrganizacion();
 	}
-	@PostMapping("/api/addActividad")
+	@PostMapping("/api/addOrganizacion")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	//@ResponseStatus(HttpStatus.OK)
-	   public void addActividad(@RequestBody Actividad actividad) {
-		actividadService.saveActividad(actividad);
+	   public Organizacion addOrganizacion(@RequestBody Organizacion organizacion) {
+		return organizacionService.saveOrganizacion(organizacion);
 	}
-	
+	@PostMapping("/api/deleteOrganizacion/{id}")
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	//@ResponseStatus(HttpStatus.OK)
+	   public void delete(@PathVariable String id) {
+		organizacionService.deleteOrganizacionById(id);
+	}
 }

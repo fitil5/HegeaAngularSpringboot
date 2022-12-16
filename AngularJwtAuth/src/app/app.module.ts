@@ -30,6 +30,9 @@ import { PasswordComponent } from './administracion/password/password.component'
 import { ActividadComponent } from './actividad/actividad.component';
 import { RegistradosComponent } from './registrados/registrados.component';
 import { MapComponent } from './map/map.component';
+import { AddActividadComponent } from './actividad/add-actividad/add-actividad.component';
+import { OrganizacionComponent } from './organizacion/organizacion.component';
+import { AddOrganizacionComponent } from './organizacion/add-organizacion/add-organizacion.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { MapComponent } from './map/map.component';
     PasswordComponent,
     ActividadComponent,
     RegistradosComponent,
-    MapComponent
+    MapComponent,
+    AddActividadComponent,
+    OrganizacionComponent,
+    AddOrganizacionComponent
 
        
   ],

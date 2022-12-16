@@ -3,7 +3,7 @@
       <tr style="background-color: rgb(255, 222, 131); text-align: center">
 
 
-          <th>Actividad</th>
+          <th  style="text-align: center">Actividad</th>
           <th></th>
           <th></th>
       </tr>
@@ -13,8 +13,10 @@
     <tr *ngFor="let actividad of actividades"  style="background-color: beige; text-align: center">
       <td>{{actividad.nombre_act}}</td>  
      
-          <td><button type="button" class="btn btn-primary" (click)="update(actividad)">Editar</button></td>
+          
         <td><button type="button" class="btn btn-danger"  (click)="delete(actividad.nombre_act)"> Borrar</button></td>
         
       </tr>
+      
     </table>
+    <button type="button" class="btn btn-primary"  (click)="redireccionar()"> Añadir</button>
