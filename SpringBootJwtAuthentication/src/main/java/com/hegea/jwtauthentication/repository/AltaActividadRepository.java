@@ -15,7 +15,7 @@ import com.hegea.jwtauthentication.services.IActividad;
 
 
 public interface AltaActividadRepository extends JpaRepository<AltaActividadCompositeKey, AltaActividad>{
-	@Query("select new com.grokonez.jwtauthentication.model.AltaActividadDTO(f.fecha, f.nombre_act,a.usuario,a.alta) from FechaActividadCompositeKey f left join AltaActividadCompositeKey a ON a.fecha = f.fecha and a.nombre_act = f.nombre_act  and a.usuario=?1 where f.fecha > current_date  order by f.fecha")
+	@Query("select new com.hegea.jwtauthentication.model.AltaActividadDTO(f.fecha, f.nombre_act,a.usuario,a.alta) from FechaActividadCompositeKey f left join AltaActividadCompositeKey a ON a.fecha = f.fecha and a.nombre_act = f.nombre_act  and a.usuario=?1 where f.fecha > current_date  order by f.fecha")
 	List<AltaActividadDTO> findFechaActividadJoinAltaActividad(String usuario);
 	@Query("select aac from AltaActividadCompositeKey aac where aac.fecha =?1 and aac.nombre_act=?2")
 	List<AltaActividadCompositeKey> findAllByFechaActividad(Date fecha,String actividad);
