@@ -22,7 +22,7 @@ public class SpringBootJwtAuthenticationApplication {
 	    mailSender.setPort(587);
 	     
 	    mailSender.setUsername("atoshegea@gmail.com");
-	    mailSender.setPassword("atos1234");
+	    mailSender.setPassword("");
 	     
 	    Properties props = mailSender.getJavaMailProperties();
 	    props.put("mail.transport.protocol", "smtp");
