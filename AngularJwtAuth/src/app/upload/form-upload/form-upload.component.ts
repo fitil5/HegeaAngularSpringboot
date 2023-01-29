@@ -26,6 +26,7 @@ export class FormUploadComponent implements OnInit {
  
   selectFile(event) {
     this.selectedFiles = event.target.files;
+    this.upload();
   }
  
   upload() {
