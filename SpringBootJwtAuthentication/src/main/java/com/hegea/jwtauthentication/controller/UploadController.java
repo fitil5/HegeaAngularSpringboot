@@ -67,7 +67,6 @@ public class UploadController {
 	
 	
 	@PostMapping("/post")
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
     public ExcelResponse uploadMultipartFile(@RequestParam("file") MultipartFile file) {
     	try {

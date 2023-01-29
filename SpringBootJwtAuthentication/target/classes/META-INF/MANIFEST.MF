@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Implementation-Title: SpringBootJwtAuthentication
 Implementation-Version: 0.0.1
 Built-By: Gaming
-Implementation-Vendor-Id: com.grokonez.jwtauthentication
+Implementation-Vendor-Id: com.hegea.jwtauthentication
 Build-Jdk: 1.8.0_221
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
  ot-starter-parent/SpringBootJwtAuthentication

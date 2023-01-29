@@ -19,7 +19,7 @@ import com.hegea.jwtauthentication.model.Usuario;
 public class Excel implements IExcel {
 	@Override
 	public void deleteIfFileExists(String filename) {
-		File tmpDir = new File("C:"+filename);
+		File tmpDir = new File("C:/"+filename);
 		if( tmpDir.exists()) {
 			tmpDir.delete();
 		}
@@ -38,21 +38,12 @@ public class Excel implements IExcel {
 		  
 		  File convFile =null;
 		  try {
-			   //f =new File("C:\\Users\\A709060\\Desktop\\jwt002\\src\\main\\java\\com\\example\\demo\\excel\\"+ excelname);
-			  //f =new File("C:\\Users\\A709060\\Desktop\\jwt002\\src\\main\\java\\com\\example\\demo\\excel\\"+ file.getOriginalFilename());
-			 // file.transferTo(new File("C:\\Users\\A709060\\Desktop\\jwt002\\src\\main\\java\\com\\example\\demo\\excel\\"+ file.getOriginalFilename()));
-			  //file.transferTo(f);
-			 // InputStream stream = new FileInputStream(f);
+			   
 			  
 			  deleteIfFileExists(excelname) ;
 			 
-				  /*convFile = new File("C:\\Users\\A709060\\Desktop\\jwt002\\src\\main\\java\\com\\example\\demo\\excel\\" +excelname);
-				    convFile.createNewFile(); 
-				    FileOutputStream fos = new FileOutputStream(convFile); 
-				    fos.write(file.getBytes());
-				    fos.close(); */
-				  
-				  f =new File("C:"+ excelname);
+				
+				  f =new File("C:/"+ excelname);
 				  file.transferTo(f);
 			  
 			  
@@ -70,7 +61,7 @@ public class Excel implements IExcel {
 			Workbook workbook;
 			Sheet sheet= null;
 			try {
-				workbook = WorkbookFactory.create(new FileInputStream("C:"+ excelname));
+				workbook = WorkbookFactory.create(new FileInputStream("C:/"+ excelname));
 				 sheet = workbook.getSheetAt(0);
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
@@ -78,7 +69,7 @@ public class Excel implements IExcel {
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}//"C:\\Users\\A709060\\Desktop\\jwt002\\src\\main\\java\\com\\example\\demo\\excel\\"+ excelname));//new FileInputStream("C:\\CursoLDCMadrid\\HegeaGrupo2\\src\\main\\webapp\\pages\\admin\\upload\\carga_parcial.xlsx"));
+			}
 		
 		   
 
@@ -124,15 +115,11 @@ public class Excel implements IExcel {
 				}
 			}
 
-				//numErrores=errores.size();
+				
 				
 
 				
-		   //return excelDTOlist;
-				/*if(erroresDTOList.isEmpty() || erroresDTOList==null ||  erroresDTOList.size()==0) {
-					erroresDTOList.add(new ExcelDTO("vacio","vacio", "vacio", "vacio", "vacio",
-							"vacio","vacio", "vacio", "vacio"));
-				}*/
+		  
 			ExcelResponse e = new  ExcelResponse(excelDTOlist,erroresDTOList);
 				return 
 		   e;
