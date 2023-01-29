@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/pruebaplantilla
     username: postgres
-    password: root
+    password: toor
     
   profiles:
     active: dev
