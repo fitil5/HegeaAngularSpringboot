@@ -19,7 +19,7 @@ import com.hegea.jwtauthentication.model.Usuario;
 public class Excel implements IExcel {
 	@Override
 	public void deleteIfFileExists(String filename) {
-		File tmpDir = new File("D:\\Angular\\copia seguridad 10 upload\\SpringBootJwtAuthentication\\src\\main\\java\\com\\grokonez\\jwtauthentication\\file\\"+filename);
+		File tmpDir = new File("C:"+filename);
 		if( tmpDir.exists()) {
 			tmpDir.delete();
 		}
@@ -52,7 +52,7 @@ public class Excel implements IExcel {
 				    fos.write(file.getBytes());
 				    fos.close(); */
 				  
-				  f =new File("C:\\\\Users\\\\Gaming\\\\Documents\\\\Copia de seguridad\\\\Angular\\\\Angular\\\\copia seguridad17 email\\\\SpringBootJwtAuthentication\\\\src\\\\main\\\\java\\\\com\\\\grokonez\\\\jwtauthentication\\\\file"+ excelname);
+				  f =new File("C:"+ excelname);
 				  file.transferTo(f);
 			  
 			  
@@ -70,7 +70,7 @@ public class Excel implements IExcel {
 			Workbook workbook;
 			Sheet sheet= null;
 			try {
-				workbook = WorkbookFactory.create(new FileInputStream("C:\\Users\\Gaming\\Documents\\Copia de seguridad\\Angular\\Angular\\copia seguridad17 email\\SpringBootJwtAuthentication\\src\\main\\java\\com\\grokonez\\jwtauthentication\\file"+ excelname));
+				workbook = WorkbookFactory.create(new FileInputStream("C:"+ excelname));
 				 sheet = workbook.getSheetAt(0);
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
