@@ -1,7 +1,7 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/pruebaplantilla
-    username: 
+    url: jdbc:postgresql://localhost:5432/pruebahegea2
+    username:  
     password: 
     
   profiles:

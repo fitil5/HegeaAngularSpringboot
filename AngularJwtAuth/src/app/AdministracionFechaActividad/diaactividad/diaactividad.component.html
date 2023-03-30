@@ -7,9 +7,8 @@
                     class="form-control form-control-sm col-sm-7" 
                     id="actividad"
                     [(ngModel)]="semana.actividad"  #actividad="ngModel">
-                    
-                    <option *ngFor="let item of actividades" 
-                             >{{item.nombre_act}}</option>
+                    <option></option>
+                    <option *ngFor="let item of actividades">{{item.nombre_act}}</option>
   </select>
   <div *ngIf="f.submitted && actividad.invalid">
   Actividad is required
